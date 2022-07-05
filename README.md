@@ -17,6 +17,7 @@ If you haven't yet, you should first [set up Git.](https://docs.github.com/en/ge
   - Press Enter. Your local clone will be created
   - In your local path, where you have your repo cloned:
   - Run the command `bundle install`
+  - Run the command `npm ci`
 
 ## Author
 
