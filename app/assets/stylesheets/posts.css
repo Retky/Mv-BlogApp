@@ -1,0 +1,31 @@
+.postsL {
+  padding: 0;
+}
+
+.post{
+  margin-top: 15px;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+.post small {
+  text-align: right;
+}
+
+.seeAllBtn {
+  text-align: center;
+  width: 100px;
+  margin: 20px auto;
+}
+
+.seeAllBtn a {
+  text-decoration: none;
+  color: #338;
+}
+
+.seeAllBtn a:hover {
+  text-decoration: underline;
+}
