@@ -1,1 +1,7 @@
-<h1>User with ID: XXXXXX<h1>
+<div id=<%=@user.id%> class="user">
+  <div class="userPhoto"><%=image_tag @user.photo %></div>
+  <div class="name">
+    <h3><%= @user.name %></h3>
+    <small>Number of posts: <%= @user.posts_counter %></small>
+  </div>
+</div>
