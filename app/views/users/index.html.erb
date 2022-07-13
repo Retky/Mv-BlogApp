@@ -1,8 +1,8 @@
 <ul class="usersL">
   <% @users.each do |user| %>
     <div class="user">
-      <div class="userPhoto"><%=image_tag user.photo %></div>
-      <div class="name">
+      <div class="userPhoto blackMargin"><%=image_tag user.photo %></div>
+      <div class="name blackMargin">
         <h3><%=link_to user.name, user %></h3>
         <small>Number of posts: <%= user.posts_counter %></small>
       </div>
