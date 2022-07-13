@@ -8,19 +8,22 @@
   </div>
 <% end %>
 <ul class="postsL">
-  <% @posts.each do |post| %>
-  <%=link_to user_post_path(@user, post) do %>
-    <div class="post blackMargin">
-      <small>Post #<%= post.id %></small>
-      <h3><%= post.title %></h3>
-      <p><%= post.text %></p>
-      <small class="counters">Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></small>
-    </div>
-    <% end %>
-    <div class="blackMargin">
-      <% post.recent_comments.each do |comment| %>
-        <%= comment.user.name %>: <%= comment.text %></br>
+  <% unless @posts.nil? %>
+    <% @posts.each do |post| %>
+    <%=link_to user_post_path(@user, post) do %>
+      <div class="post blackMargin">
+        <small>Post #<%= post.id %></small>
+        <h3><%= post.title %></h3>
+        <p><%= post.text %></p>
+        <small class="counters">Comments: <%= post. comments_counter %>, Likes: <%= post.likes_counter %></  small>
+      </div>
       <% end %>
-    </div>
+      <div class="blackMargin">
+        <% post.recent_comments.each do |comment| %>
+          <%= comment.user.name %>: <%= comment.text %></br>
+        <% end %>
+      </div>
+    <% end %>
   <% end %>
 </ul>
+<div class="center"><%= will_paginate @posts %></div>

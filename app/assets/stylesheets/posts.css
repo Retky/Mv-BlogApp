@@ -39,3 +39,7 @@ a {
 .seeAllBtn a:hover {
   text-decoration: underline;
 }
+
+.center {
+  text-align: center;
+}
