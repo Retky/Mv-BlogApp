@@ -1,1 +1,11 @@
-<h1>Post XX<h1>
+<div class="post blackMargin">
+  <small>Post #<%= @post.id %> by <%= @post.user.name %></small>
+  <small class="counters">Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %></small>
+  <h3><%= @post.title %></h3>
+  <p><%= @post.text %></p>
+</div>
+<div class="blackMargin">
+  <% @post.comments.each do |comment| %>
+    <%= comment.user.name %>: <%= comment.text %></br>
+  <% end %>
+</div>

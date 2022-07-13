@@ -1,0 +1,45 @@
+.postsL {
+  padding: 0;
+}
+
+.post {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.post h3 {
+  margin-bottom: 0;
+}
+
+.post p {
+  margin-top: 5px;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+.counters {
+  align-self: flex-end;
+}
+
+.seeAllBtn {
+  text-align: center;
+  width: 100px;
+  margin: 20px auto;
+}
+
+.seeAllBtn a {
+  text-decoration: none;
+  color: #338;
+}
+
+.seeAllBtn a:hover {
+  text-decoration: underline;
+}
+
+.center {
+  text-align: center;
+}

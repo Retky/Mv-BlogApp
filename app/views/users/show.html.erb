@@ -1,1 +1,21 @@
-<h1>User with ID: XXXXXX<h1>
+<div class="user">
+  <div class="userPhoto blackMargin"><%=image_tag @user.photo %></div>
+  <div class="name blackMargin">
+    <h3><%= @user.name %></h3>
+    <small>Number of posts: <%= @user.posts_counter %></small>
+  </div>
+</div>
+<div class="bio blackMargin">
+  <h3>Bio</h3>
+  <p><%= @user.bio %></p>
+</div>
+<ul class="postsL">
+  <% @user.recent_posts.each do |post| %>
+    <div class="post blackMargin">
+      <h3><%=link_to post.title, user_post_path(@user, post) %></h3>
+      <p><%= post.text %></p>
+      <small>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></small>
+    </div>
+  <% end %>
+  <div class="seeAllBtn blackMargin"><%=link_to "See all posts", user_posts_path(@user), class: 'show-posts'%></div>
+</ul>
