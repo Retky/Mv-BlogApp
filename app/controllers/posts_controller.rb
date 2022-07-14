@@ -41,4 +41,10 @@ class PostsController < ApplicationController
       render :show, alert: 'Error occured!'
     end
   end
+
+  def like
+    @post = Post.find(params[:id])
+    Like.new(author_id: current_user.id, post_id: @post.id).save
+    redirect_to user_post_path(current_user)
+  end
 end
