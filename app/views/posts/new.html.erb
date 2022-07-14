@@ -1,0 +1,8 @@
+<%= form_with model: @post, url: user_posts_path, method: :post, local: true, scope: :post do |f| %>
+  <%= f.hidden_field :author_id, value: @user.id %>
+  <%= f.label :title %><br>
+  <%= f.text_field :title %><br>
+  <%= f.label :text %><br>
+  <%= f.text_area :text %><br>
+  <%= f.submit "Post" %>
+<% end %>
