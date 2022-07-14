@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show] do
     resources :posts, only: [:index, :show, :new, :create]
     post '/users/:id/posts/new', to: 'posts#create' # create
+    post '/posts/:id/comment', to: 'posts#comment', as: :comments
   end
 end
