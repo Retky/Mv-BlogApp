@@ -9,3 +9,9 @@
     <%= comment.user.name %>: <%= comment.text %></br>
   <% end %>
 </div>
+<%= form_with :url => user_comments_path(@user, @post), method: :post do |f| %>
+  <%= f.hidden_field :post_id, value: @post.id %>
+  <%= f.hidden_field :author_id, value: @user.id %>
+  <%= f.text_area :comment, placeholder: 'Comment' %><br>
+  <%= f.submit "Comment" %>
+<% end %>
