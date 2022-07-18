@@ -5,7 +5,7 @@
   <p><%= @post.text %></p>
 </div>
 <div class="blackMargin">
-  <% @post.comments.each do |comment| %>
+  <% @comments.each do |comment| %>
     <%= comment.user.name %>: <%= comment.text %></br>
   <% end %>
 </div>

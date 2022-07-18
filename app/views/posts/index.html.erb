@@ -19,7 +19,7 @@
       </div>
       <% end %>
       <div class="blackMargin">
-        <% post.recent_comments.each do |comment| %>
+        <% post.recent_comments.includes([:user]).each do |comment| %>
           <%= comment.user.name %>: <%= comment.text %></br>
         <% end %>
       </div>
