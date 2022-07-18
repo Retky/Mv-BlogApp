@@ -4,8 +4,21 @@
 > A classic example of a blog website.
 That will show the list of posts and empower readers to interact with them by adding comments and liking posts.
 
+## Built With
+- Ruby on Rails
+- PostgreSQL
+
 ### Prerequisites
 If you haven't yet, you should first [set up Git.](https://docs.github.com/en/get-started/quickstart/set-up-git) Don't forget to [set up authentication to GitHub.com from Git](https://docs.github.com/en/get-started/quickstart/set-up-git#next-steps-authenticating-with-github-from-git) as well.
+
+#### PostgreSQL
+Require to have a User with Name: `rails` and password `microverse`
+
+OR
+
+Modify the user in `config\database.yml` lines 23 & 24.
+
+
 
 ### Usage
 - Clone the repository
@@ -18,6 +31,8 @@ If you haven't yet, you should first [set up Git.](https://docs.github.com/en/ge
   - In your local path, where you have your repo cloned:
   - Run the command `bundle install`
   - Run the command `npm ci`
+  - Create the Database `rails db:create`
+  - Migrate the Database `rails db:migrate`
 
 ## Author
 
