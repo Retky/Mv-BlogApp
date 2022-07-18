@@ -1,26 +1,29 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
 # Mv-BlogApp
+
 > A classic example of a blog website.
-That will show the list of posts and empower readers to interact with them by adding comments and liking posts.
+> That will show the list of posts and empower readers to interact with them by adding comments and liking posts.
 
 ## Built With
+
 - Ruby on Rails
 - PostgreSQL
 
 ### Prerequisites
+
 If you haven't yet, you should first [set up Git.](https://docs.github.com/en/get-started/quickstart/set-up-git) Don't forget to [set up authentication to GitHub.com from Git](https://docs.github.com/en/get-started/quickstart/set-up-git#next-steps-authenticating-with-github-from-git) as well.
 
 #### PostgreSQL
+
 Require to have a User with Name: `rails` and password `microverse`
 
 OR
 
 Modify the user in `config\database.yml` lines 23 & 24.
 
-
-
 ### Usage
+
 - Clone the repository
   - Above the list of files, click **↓Code**
   - Clone with HTTPS
@@ -37,11 +40,18 @@ Modify the user in `config\database.yml` lines 23 & 24.
 ## Author
 
 👤 **J. Luis Arredondo**
+
 - GitHub: [@Retky](https://github.com/Retky "J. Luis Arredondo GitHub")
 - Twitter: [@RetkyFox](https://twitter.com/retkyFox "J. Luis Arredondo Twitter")
 - LinkedIn: [Retky](https://www.linkedin.com/in/Retky "J. Luis Arredondo LinkedIn")
 
+👤 **Sediqullah Badakhsh**
+
+- GitHub: [@Retky](https://github.com/sediqullahbadakhsh "J. Luis Arredondo GitHub")
+- LinkedIn: [Retky](https://www.linkedin.com/in/sediq "J. Luis Arredondo LinkedIn")
+
 ## 🤝 Contributing
+
 Contributions, issues, and feature requests are welcome!
 Feel free to get in touch with any issues or suggestions.
 
@@ -50,7 +60,9 @@ Feel free to get in touch with any issues or suggestions.
 - 🙋‍♀️ **General questions:** Use [Github Discussions](https://github.com/Retky/Mv-BlogApp/discussions "General Questions")
 
 ## Show your support
+
 Give a ⭐️ if you like this project!
 
 ## 📝 License
+
 This project is [MIT](./LICENSE) licensed.
