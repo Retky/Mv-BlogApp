@@ -19,7 +19,6 @@ RSpec.describe 'User index page', type: :feature do
     expect(page).to have_content('Jane')
     expect(page).to have_content('Jack')
   end
-  end
 
   it 'should show the profile photo of all users' do
     expect(page).to have_css('img')
