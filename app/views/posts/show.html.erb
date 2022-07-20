@@ -6,7 +6,12 @@
 </div>
 <div class="blackMargin">
   <% @comments.each do |comment| %>
-    <%= comment.user.name %>: <%= comment.text %></br>
+    <p>
+      <%= comment.user.name %>: <%= comment.text %>
+      <% if can? :destroy_comment, comment %>
+        <%= link_to 'Delete', user_destroy_comment_path(current_user.id, @post.id, comment.id), method: :post, class: 'del' %>
+      <% end %>
+    <p>
   <% end %>
 </div>
 

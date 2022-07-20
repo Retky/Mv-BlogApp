@@ -54,3 +54,9 @@ a {
   border: 1px solid #ccc;
   box-shadow: 0 0 10px #ccc;
 }
+
+.del {
+  color: #aaa;
+  font-size: 12px;
+  margin-left: 25px;
+}
