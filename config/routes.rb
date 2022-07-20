@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     post '/posts/:id/comment', to: 'posts#comment', as: :comments
     post '/posts/:id/like', to: 'posts#like', as: :like
     get '/posts/:post_id/destroy', to: 'posts#destroy', as: :destroy
+    get '/posts/:post_id/desroy_comment', to: 'posts#destroy_comment', as: :destroy_comment
     post '/posts/:post_id/destroy', to: 'posts#destroy' # destroy
+    post '/posts/:post_id/destroy_comment', to: 'posts#destroy_comment' # destroy_comment
   end
 end
