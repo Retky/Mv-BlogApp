@@ -15,6 +15,11 @@
       <h3><%=link_to post.title, user_post_path(@user, post) %></h3>
       <p><%= post.text %></p>
       <small>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></small>
+      <small class="counters">
+        <% if can? :destroy, post %>
+          <%= link_to 'Delete', user_destroy_path(@user.id, post.id), method: :post %>
+        <% end %>
+      </small>
     </div>
   <% end %>
   <div class='botBtn'>

@@ -16,7 +16,12 @@
         <h3><%= post.title %></h3>
         <p><%= post.text %></p>
         <small class="counters">Comments: <%= post. comments_counter %>, Likes: <%= post.likes_counter %></  small>
+        <% if can? :destroy, post %>
+          <%= link_to 'Delete', user_destroy_path(@user.id, post.id), method: :post %>
+        <% end %>
+        </small>
       </div>
+      
       <% end %>
       <div class="blackMargin">
         <% post.recent_comments.includes([:user]).each do |comment| %>
