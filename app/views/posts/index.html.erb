@@ -7,8 +7,8 @@
     </div>
   </div>
 <% end %>
-<ul class="postsL">
-  <% unless @posts.nil? %>
+<% unless @posts.nil? %>
+  <ul class="postsL">
     <% @posts.each do |post| %>
     <%=link_to user_post_path(@user, post) do %>
       <div class="post blackMargin">
@@ -24,6 +24,7 @@
         <% end %>
       </div>
     <% end %>
-  <% end %>
-</ul>
+  </ul>
+<% end %>
+<div class="seeAllBtn blackMargin"><%=link_to "New Post", new_user_post_path(@user), class: 'show-posts'%></div>
 <div class="center"><%= will_paginate @posts %></div>

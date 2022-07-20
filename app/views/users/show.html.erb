@@ -17,5 +17,8 @@
       <small>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></small>
     </div>
   <% end %>
-  <div class="seeAllBtn blackMargin"><%=link_to "See all posts", user_posts_path(@user), class: 'show-posts'%></div>
+  <div class='botBtn'>
+    <div class="seeAllBtn blackMargin"><%=link_to "See All Posts", user_posts_path(@user), class: 'show-posts'%></div>
+    <div class="seeAllBtn blackMargin"><%=link_to "New Post", new_user_post_path(@user), class: 'show-posts'%></div>
+  </div>
 </ul>
