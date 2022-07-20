@@ -44,3 +44,9 @@
   margin-top: 10px;
   margin-bottom: 50px;
 }
+
+.botBtn {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}

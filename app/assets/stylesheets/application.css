@@ -13,6 +13,19 @@
  *= require_tree .
  *= require_self
  */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.btn {
+  background-color: #fff;
+  border: solid #000 1px;
+  padding: 3px 10px;
+}
 
 .form {
   display: flex;

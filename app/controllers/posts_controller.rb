@@ -48,4 +48,19 @@ class PostsController < ApplicationController
     Like.new(author_id: current_user.id, post_id: @post.id).save
     redirect_to user_post_path(current_user)
   end
+
+  def destroy
+    @post = Post.find(params[:post_id])
+    @user = User.find(params[:user_id])
+    @post.destroy
+    redirect_back(fallback_location: root_path)
+  end
+
+  def destroy_comment
+    @post = Post.find(params[:post_id])
+    @user = User.find(params[:user_id])
+    @comment = @post.comments.find(params[:format])
+    @comment.destroy
+    redirect_back(fallback_location: root_path)
+  end
 end

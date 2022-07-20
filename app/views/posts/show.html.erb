@@ -6,19 +6,24 @@
 </div>
 <div class="blackMargin">
   <% @comments.each do |comment| %>
-    <%= comment.user.name %>: <%= comment.text %></br>
+    <p>
+      <%= comment.user.name %>: <%= comment.text %>
+      <% if can? :destroy_comment, comment %>
+        <%= link_to 'Delete', user_destroy_comment_path(current_user.id, @post.id, comment.id), method: :post, class: 'del' %>
+      <% end %>
+    <p>
   <% end %>
 </div>
 
 <%= form_with url: user_like_path(@user, @post), method: :post do |f| %>
   <%= f.hidden_field :user_id, value: @user.id %>
   <%= f.hidden_field :post_id, value: @post.id %>
-  <%= f.submit "Like" %>
+  <%= f.submit "Like", class: 'btn' %>
 <% end %>
 
 <%= form_with :url => user_comments_path(@user, @post), method: :post do |f| %>
   <%= f.hidden_field :post_id, value: @post.id %>
   <%= f.hidden_field :author_id, value: @user.id %>
-  <%= f.text_area :comment, placeholder: 'Comment' %><br>
-  <%= f.submit "Comment" %>
+  <%= f.text_area :comment, placeholder: 'Comment', class: 'fileBox' %><br>
+  <%= f.submit "Comment", class: 'btn' %>
 <% end %>
