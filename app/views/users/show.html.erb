@@ -17,7 +17,7 @@
       <small>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></small>
       <small class="counters">
         <% if can? :destroy, post %>
-          <%= link_to 'Delete', user_destroy_path(@user.id, post.id), method: :post %>
+          <%= button_to 'Delete', user_post_path(@user.id, post.id), method: :delete %>
         <% end %>
       </small>
     </div>

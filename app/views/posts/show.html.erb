@@ -8,8 +8,8 @@
   <% @comments.each do |comment| %>
     <p>
       <%= comment.user.name %>: <%= comment.text %>
-      <% if can? :destroy_comment, comment %>
-        <%= link_to 'Delete', user_destroy_comment_path(current_user.id, @post.id, comment.id), method: :post, class: 'del' %>
+      <% if can? :destroy, comment %>
+        <%= button_to 'Delete', user_post_comment_path(current_user.id, @post.id, comment.id), method: :delete, class: 'del' %>
       <% end %>
     <p>
   <% end %>
@@ -21,7 +21,7 @@
   <%= f.submit "Like", class: 'btn' %>
 <% end %>
 
-<%= form_with :url => user_comments_path(@user, @post), method: :post do |f| %>
+<%= form_with :url => user_post_comments_path(@user, @post), method: :post do |f| %>
   <%= f.hidden_field :post_id, value: @post.id %>
   <%= f.hidden_field :author_id, value: @user.id %>
   <%= f.text_area :comment, placeholder: 'Comment', class: 'fileBox' %><br>

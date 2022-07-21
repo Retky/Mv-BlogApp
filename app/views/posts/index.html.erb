@@ -10,19 +10,17 @@
 <% unless @posts.nil? %>
   <ul class="postsL">
     <% @posts.each do |post| %>
-    <%=link_to user_post_path(@user, post) do %>
       <div class="post blackMargin">
         <small>Post #<%= post.id %></small>
-        <h3><%= post.title %></h3>
+        <h3><%=link_to post.title, user_post_path(@user, post) %></h3>
         <p><%= post.text %></p>
         <small class="counters">Comments: <%= post. comments_counter %>, Likes: <%= post.likes_counter %></  small>
         <% if can? :destroy, post %>
-          <%= link_to 'Delete', user_destroy_path(@user.id, post.id), method: :post %>
+          <%= button_to 'Delete', user_post_path(post.author_id, post.id), method: :delete %>
         <% end %>
         </small>
       </div>
       
-      <% end %>
       <div class="blackMargin">
         <% post.recent_comments.includes([:user]).each do |comment| %>
           <%= comment.user.name %>: <%= comment.text %></br>
