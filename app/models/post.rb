@@ -12,6 +12,10 @@ class Post < ApplicationRecord
   end
   after_save :update_user_posts_counter
 
+  def as_json(_options = {})
+    super(only: %i[id title text author_id created_at updated_at comments_counter likes_counter])
+  end
+
   private
 
   def update_user_posts_counter

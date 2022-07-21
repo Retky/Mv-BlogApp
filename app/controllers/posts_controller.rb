@@ -2,12 +2,22 @@ class PostsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
     @posts = @user.posts.paginate(page: params[:page], per_page: 2)
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @user.posts }
+    end
   end
 
   def show
     @user = User.find(params[:user_id])
     @post = Post.find(params[:id])
     @comments = @post.comments.includes(:user)
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @post }
+    end
   end
 
   def new
@@ -40,7 +50,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:post_id])
+    @post = Post.find(params[:id])
     @user = User.find(params[:user_id])
     @post.destroy
     redirect_back(fallback_location: root_path)
